@@ -9,7 +9,7 @@
 #                         2. tail: points to last node always
 #                         3. current_node: varies position as per requirements
 
-class Node:
+class Node(object):
 
 	def __init__(self,key=None):
 		self.key=key
@@ -104,8 +104,9 @@ class SinglyLinkedList(object):
 				c+=1
 				if current_node.key == key:
 					return c
+					break
 				current_node = current_node.next
-			
+
 
 
 
@@ -158,6 +159,7 @@ s.popFront()
 print("2___1_____3")
 print(s.topFront())
 print(s.topBack())
+print(s.find(3))
 
 # print(s.topFront())
 # print(s.topBack())
