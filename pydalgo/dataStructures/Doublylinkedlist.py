@@ -81,12 +81,35 @@ class DoublylinkedList:
 
 
 	def addBefore(self,node_key,key):
-		""" inserts a node after given a node_key. First find the given index then insert before the node """
-		pass
+		""" inserts a node before given a node_key. First find the given key in the liked list and 
+		 then insert before the node """
+		current_node = self.head
+		node = Node(key)
+		if self.head is None:
+			return "List is empty"
+		else:
+			while current_node:
+				if current_node.key == node_key:
+					
+					break
+				current_node = current_node.next
+
 
 	def addAfter(self,node_key,key):
-		""" doc string """
-		pass
+		""" inserts a node after given a node_key. First find the given key in the liked list and 
+		 then insert after the node """
+		current_node = self.head
+		node = Node(key)
+		if self.head is None:
+			return "List is empty"
+		else:
+			while current_node:
+				if current_node.key == node_key:
+					node.next = current_node.next
+					current_node.next.prev = node
+					node.prev = current_node
+					break
+				current_node = current_node.next
 
 	def isEmpty(self):
 		return bool(self.head)
